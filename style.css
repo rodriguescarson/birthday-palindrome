@@ -1,16 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #F59E0B;
+  --dark-gray: #6B7280;
+  --off-white:#F3F4F6;
+}
+
 body {
     margin: 0;
-    padding: 1rem;
     box-sizing: border-box;
-    height: 100vh;
-    background-color: rgb(29, 35, 51);
-    color: white;
+    height: 75vh;
+    color: black;
   }
   
   main {
     border: 1px solid white;
     text-align: center;
     height: 100%;
+    padding: 20vh;
   }
   
   p {
@@ -19,3 +30,100 @@ body {
     font-size: large;
   }
   
+
+/* Header */
+
+header {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+header h1 {
+  font-family: "Megrim", cursive;
+  text-align: initial;
+}
+
+nav {
+  text-align: right;
+}
+
+nav > a {
+  padding: 0 0.5rem;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  padding: 2rem 1rem;
+  text-align: center;
+  color: white;
+  border-top-right-radius: 1rem;
+
+}
+
+.footer .link {
+  color: white;
+}
+
+.footer .footer-header {
+  font-weight: bold;
+  font-size: large;
+}
+
+.footer ul {
+  padding-inline-start: 0px;
+}
+
+#bday-input{
+  font-size: 14px;
+  outline: #fff;
+  padding: 0.6rem 1rem;
+  margin: 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-bottom: 5vh;
+ text-align: center;
+
+}
+
+
+.btn-check {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-size: large;
+  cursor: pointer;
+  outline: #fff;
+  margin: auto;
+  display: block;
+}
+
+.list-non-bullet {
+  list-style: none;
+}
+#result{
+  padding: 10vh;
+}
+.list-item-inline {
+  display: inline;
+  padding: 0rem 0.5rem;
+}
+
+
+/* container */
+container {
+  padding: 0rem 1rem;
+}
+
+.container-center {
+  width: 100%;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0. 1rem;
+}
