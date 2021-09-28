@@ -1,3 +1,11 @@
+var dateInputRef = document.querySelector("#bday-input");
+var showBtnRef = document.querySelector("#show-btn");
+var resultRef = document.querySelector("#result");
+// var date = {
+//     day: 2,
+//     month: 2,
+//     year: 2020
+// }
 function reverseString(str) {
     var listOfChars = str.split(''); //['','']
     var reverseListOfChars = listOfChars.reverse();
@@ -38,12 +46,11 @@ function convertDateToString(date) {
 
 function getAllDateFormats(date) {
     var dateStr = convertDateToString(date);
-
     var ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
     var mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
     var yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
     var ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2);
-    var mmddyy = dateStr.month + date.day + dateStr.year.slice(-2)
+    var mmddyy = dateStr.month + dateStr.day + dateStr.year.slice(-2);
     var yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
 
     return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
@@ -139,21 +146,21 @@ function getPreviousDate(date) {
 
     if (day === 0) {
         month--;
-    
+
         if (month === 0) {
-          month = 12;
-          day = 31;
-          year--;
+            month = 12;
+            day = 31;
+            year--;
         } else if (month === 2) {
-          if (isLeapYear(year)) {
-            day = 29;
-          } else {
-            day = 28;
-          }
+            if (isLeapYear(year)) {
+                day = 29;
+            } else {
+                day = 28;
+            }
         } else {
-          day = daysInMonth[month - 1];
+            day = daysInMonth[month - 1];
         }
-      }
+    }
 
     return {
         day,
@@ -177,15 +184,6 @@ function getPreviousPalindromeDate(date) {
     return [ctr2, previousDate];
 }
 
-// var date = {
-//     day: 1,
-//     month: 2,
-//     year: 2020
-// }
-
-var dateInputRef = document.querySelector("#bday-input");
-var showBtnRef = document.querySelector("#show-btn");
-var resultRef = document.querySelector("#result");
 
 function clickHandler() {
     var bdayStr = dateInputRef.value;
@@ -197,11 +195,12 @@ function clickHandler() {
             year: Number(listofDate[0]),
         }
     }
+
     var isPalindrome = checkPalindrimeForAllDateFormats(date);
     if (isPalindrome) {
         resultRef.innerText = "Yay! your birthday is a pallindrime";
-
     } else {
+
         const [ctr1, nextDate] = getNextPalindrimeDate(date);
         const [ctr2, previousDate] = getPreviousPalindromeDate(date);
         if (ctr2 > ctr1) {
@@ -212,4 +211,4 @@ function clickHandler() {
     }
 }
 
-showBtnRef.addEventListener("click",clickHandler);
+showBtnRef.addEventListener("click", clickHandler);
